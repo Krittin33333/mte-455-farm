@@ -12,6 +12,11 @@ public class CameraController : MonoBehaviour
 
     [SerializeField] private float moveSpeed;
 
+    [SerializeField] private Transform Corner1, Corner2;
+
+    [SerializeField] private float rotationAmount;
+    [SerializeField] private Quaternion newRotation;
+
     private Camera cam;
     public CameraController instance;
     // Start is called before the first frame update
@@ -19,6 +24,9 @@ public class CameraController : MonoBehaviour
     {
         instance = this;
         cam = Camera.main;
+
+        newRotation = transform.rotation;
+        rotationAmount = 1;
     }
 
     // Update is called once per frame
@@ -26,6 +34,8 @@ public class CameraController : MonoBehaviour
     {
         Zoom();
         MovebyKB();
+
+        Rotate();
     }
     private void Zoom()
     {
@@ -52,5 +62,27 @@ public class CameraController : MonoBehaviour
 
         Vector3 dir = transform.forward * zInput + transform.right * xInput;
         transform.position += dir * moveSpeed * Time.deltaTime;
+
+        transform.position = Clamp( Corner1.position, Corner2.position);
     }
+
+    private Vector3 Clamp(Vector3 lowerLeft, Vector3 topRight)
+    {
+        Vector3 pos = new Vector3(Mathf.Clamp(transform.position.x,lowerLeft.x, topRight.x),
+            transform.position.y,Mathf.Clamp(transform.position.z,lowerLeft.z, topRight.z));
+        return pos;
+    }
+
+    private void Rotate()
+    {
+        if (Input.GetKey(KeyCode.Q))
+            newRotation *= Quaternion.Euler(Vector3.up * rotationAmount);
+
+        if (Input.GetKey(KeyCode.E))
+            newRotation *= Quaternion.Euler(Vector3.up * -rotationAmount);
+
+        transform.rotation = Quaternion.Lerp(transform.rotation, newRotation, Time.deltaTime * moveSpeed);
+    }
+
+
 }
