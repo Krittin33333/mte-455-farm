@@ -34,8 +34,8 @@ public class CameraController : MonoBehaviour
     {
         Zoom();
         MovebyKB();
-
         Rotate();
+
     }
     private void Zoom()
     {
@@ -80,6 +80,9 @@ public class CameraController : MonoBehaviour
 
         if (Input.GetKey(KeyCode.E))
             newRotation *= Quaternion.Euler(Vector3.up * -rotationAmount);
+
+        if (Input.GetKey(KeyCode.O)) //homework
+            newRotation = Quaternion.identity;
 
         transform.rotation = Quaternion.Lerp(transform.rotation, newRotation, Time.deltaTime * moveSpeed);
     }
