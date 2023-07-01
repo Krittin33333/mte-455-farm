@@ -54,6 +54,12 @@ public class Worker : MonoBehaviour
     private NavMeshAgent navAgent;
     public NavMeshAgent NavAgent { get { return navAgent; } set { navAgent = value; } }
 
+
+    void Awake()
+    {
+        navAgent = GetComponent<NavMeshAgent>();
+    }
+
     // Start is called before the first frame update
     void Start()
     {
