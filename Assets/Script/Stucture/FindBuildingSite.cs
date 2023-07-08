@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class FindBuildingSite : MonoBehaviour
@@ -48,4 +46,3 @@ public class FindBuildingSite : MonoBehaviour
         ChangeColor(other, true, Color.green);
     }
 }
-

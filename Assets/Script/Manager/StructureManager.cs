@@ -33,6 +33,11 @@ public class StructureManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(Input.GetKeyDown(KeyCode.Escape) || (Input.GetMouseButtonDown(1)))
+            {
+            CancelStructureMode();
+        }
+
         curCursorPos = Formula.instance.GetCurTilePosition();
 
         if (isConstructing) //Mode Construct
@@ -85,6 +90,16 @@ public class StructureManager : MonoBehaviour
             if (isConstructing)
                 PlaceBuilding(); //Real Construction
         }
+    }
+    private void CancelStructureMode()
+    {
+        isConstructing = false;
+
+        if (buildingCursor != null)
+            buildingCursor.SetActive(false);
+
+        if (ghostBuilding != null)
+            Destroy(ghostBuilding);
     }
 
 }
