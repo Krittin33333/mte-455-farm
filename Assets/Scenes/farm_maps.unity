@@ -122,7 +122,7 @@ NavMeshSettings:
     preserveTilesOutsideBounds: 0
     debug:
       m_Flags: 0
-  m_NavMeshData: {fileID: 0}
+  m_NavMeshData: {fileID: 23800000, guid: f47f4245cbf57fa46b271065cab031c7, type: 2}
 --- !u!1 &45643304
 GameObject:
   m_ObjectHideFlags: 0
@@ -5106,11 +5106,11 @@ GameObject:
   - component: {fileID: 1306348030}
   - component: {fileID: 1306348029}
   m_Layer: 0
-  m_Name: Plane
+  m_Name: GroundPlane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &1306348028
 Transform:
