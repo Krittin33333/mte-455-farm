@@ -3,8 +3,12 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
+
 public class MainUI : MonoBehaviour
 {
+    
+    public static MainUI instance;
+    
     [SerializeField] private TMP_Text moneyText;
     [SerializeField] private TMP_Text staffText;
     [SerializeField] private TMP_Text wheatText;
@@ -17,7 +21,12 @@ public class MainUI : MonoBehaviour
 
     public GameObject laborMarketPanel;
 
-    public static MainUI instance;
+    public GameObject farmPanel;
+
+
+    [SerializeField] private TMP_Text farmNameText;
+    public TMP_Text FarmNameText
+    { get { return farmNameText; } set { farmNameText = value; } }
 
     // Start is called before the first frame update
     void Start()
@@ -43,6 +52,14 @@ public class MainUI : MonoBehaviour
             laborMarketPanel.SetActive(true);
         else
             laborMarketPanel.SetActive(false);
+    }
+
+    public void ToggleFarmPanel()
+    {
+        if (!farmPanel.activeInHierarchy)
+            farmPanel.SetActive(true);
+        else
+            farmPanel.SetActive(false);
     }
 
 }
