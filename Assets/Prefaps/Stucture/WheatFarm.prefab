@@ -253,7 +253,7 @@ MonoBehaviour:
   hp: 1
   costToBuild: 1800
   id: 1
-  stage: 3
+  stage: 0
   maxStaffNum: 3
   dayRequired: 3
   dayPassed: 0

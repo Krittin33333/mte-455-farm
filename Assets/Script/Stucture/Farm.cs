@@ -22,7 +22,7 @@ using UnityEngine;
         [SerializeField] private int dayPassed; //Day passed since last harvest
 
         private float WorkTimer = 0f;
-        private float WorkTimeWait = 0f;
+        private float WorkTimeWait = 1f;
 
     [SerializeField] private float produceTimer = 0f;
         private int secondsPerDay = 10;
