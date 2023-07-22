@@ -13,6 +13,7 @@ using UnityEngine;
     public class Farm : Structure
     {
         [SerializeField] private FarmStage stage = FarmStage.plowing;
+        public FarmStage Stage { get { return stage; } }
 
         [SerializeField] private int maxStaffNum = 3;
         public int MaxStaffNum { get { return maxStaffNum; } set { maxStaffNum = value; } }
@@ -20,7 +21,10 @@ using UnityEngine;
         [SerializeField] private int dayRequired; //Day until harvest
         [SerializeField] private int dayPassed; //Day passed since last harvest
 
-        [SerializeField] private float produceTimer = 0f;
+        private float WorkTimer = 0f;
+        private float WorkTimeWait = 0f;
+
+    [SerializeField] private float produceTimer = 0f;
         private int secondsPerDay = 10;
 
         [SerializeField] private GameObject FarmUI;
@@ -76,17 +80,57 @@ using UnityEngine;
         {
             if ((hp >= 100) && (stage == FarmStage.harvesting))
             {
-                //harvest
-                Debug.Log("Harvest +1000");
+            //harvest
+            HarvestResult();
+               // Debug.Log("Harvest +1000");
 
                 hp = 1;
                 stage = FarmStage.sowing;
             }
         }
 
-    public void AddStaffToFarm(Worker w)
+        public void AddStaffToFarm(Worker w)
+        {
+            currentWorkers.Add(w);
+        }
+
+    private void Working()
     {
-        currentWorkers.Add(w);
+        hp += 3;
     }
+
+    public void CheckTimeForWork()
+    {
+        WorkTimer += Time.deltaTime;
+
+        if (WorkTimer >= WorkTimeWait)
+        {
+            WorkTimer = 0;
+            Working();
+        }
+    }
+
+    public void HarvestResult()
+    {
+        switch (structureType)
+        {
+            case StructureType.wheat:
+                {
+                    Office.instance.Wheat += 1000;
+                    break;
+                }
+            case StructureType.melon:
+                {
+                    Office.instance.Melon += 1200;
+                    break;
+                }
+        }
+
+        MainUI.instance.UpdateResourceUI();
+    }
+
+
+
+
 }
 

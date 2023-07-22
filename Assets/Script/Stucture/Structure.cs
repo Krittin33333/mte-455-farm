@@ -2,16 +2,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-    public enum StructureType
-    {
-        road,
-        building,
-        wheat,
-    }
+public enum StructureType
+{
+    road,
+    building,
+    wheat,
+    melon,
+    corn,
+    milk,
+    apple
+}
 
-    public abstract class Structure : MonoBehaviour
+public abstract class Structure : MonoBehaviour
     {
-        [SerializeField] private StructureType structureType;
+        [SerializeField] protected StructureType structureType;
         public StructureType StructureType { get { return structureType; } set { structureType = value; } }
 
         [SerializeField] protected bool functional;
