@@ -452,7 +452,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   structureType: 0
   functional: 0
-  structureName: 
+  structureName: MelonFarm
   hp: 1
   costToBuild: 3200
   id: 1
