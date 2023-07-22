@@ -365,10 +365,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8612920096910580349}
+  - component: {fileID: 8883853253185570245}
   - component: {fileID: 7811616092575314784}
   - component: {fileID: 3418464562686786865}
   - component: {fileID: 5001074230880555056}
-  - component: {fileID: 8883853253185570245}
   m_Layer: 0
   m_Name: MelonFarm
   m_TagString: Farm
@@ -395,6 +395,31 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8883853253185570245
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7839294187896412382}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7ebd523b15cdd5498cd5f51ff320659, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  structureType: 3
+  functional: 0
+  structureName: MelonFarm
+  hp: 1
+  costToBuild: 3200
+  id: 1
+  stage: 3
+  maxStaffNum: 3
+  dayRequired: 5
+  dayPassed: 0
+  produceTimer: 0
+  FarmUI: {fileID: 0}
+  currentWorkers: []
 --- !u!114 &7811616092575314784
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -438,31 +463,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &8883853253185570245
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7839294187896412382}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d7ebd523b15cdd5498cd5f51ff320659, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  structureType: 3
-  functional: 0
-  structureName: MelonFarm
-  hp: 1
-  costToBuild: 3200
-  id: 1
-  stage: 0
-  maxStaffNum: 3
-  dayRequired: 7
-  dayPassed: 0
-  produceTimer: 0
-  FarmUI: {fileID: 0}
-  currentWorkers: []
 --- !u!1 &8380582820725719169
 GameObject:
   m_ObjectHideFlags: 0
