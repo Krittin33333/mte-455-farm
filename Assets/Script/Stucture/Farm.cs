@@ -83,5 +83,10 @@ using UnityEngine;
                 stage = FarmStage.sowing;
             }
         }
+
+    public void AddStaffToFarm(Worker w)
+    {
+        currentWorkers.Add(w);
     }
+}
 
