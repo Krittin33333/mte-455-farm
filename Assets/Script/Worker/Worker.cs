@@ -63,7 +63,9 @@ public class Worker : MonoBehaviour
     private float CheckStateTimer = 0f;
     private float CheckStateTimeWait = 0.5f;
 
-    [SerializeField] private GameObject[] tools; 
+    [SerializeField] private GameObject[] tools;
+
+    
 
     void Awake()
     {
@@ -180,17 +182,19 @@ public class Worker : MonoBehaviour
                     break;
                 case FarmStage.harvesting:
                     state = UnitState.Harvest;
+                    DisableAllTools();
                     farm.CheckTimeForWork();
                     break;
             }
         }
     }
 
-    private void DisableAllTools()
+    public void DisableAllTools()
     {
         for (int i = 0; i < tools.Length; i++)
             tools[i].SetActive(false);
     }
+
 
     private void EquipTool(int i)
     {

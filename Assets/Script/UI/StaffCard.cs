@@ -55,6 +55,7 @@ public class StaffCard : MonoBehaviour
 
         if (fired)
         {
+
             HireButton.gameObject.SetActive(true);
             FireButton.gameObject.SetActive(false);
         }

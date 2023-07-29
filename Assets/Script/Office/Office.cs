@@ -147,10 +147,13 @@ public class Office : MonoBehaviour
         }
 
         w.TargetStructure = null; //Quit working
+        w.DisableAllTools(); //disabletools
         w.SetToWalk(spawnPosition.transform.position);
 
         FireStaff(w);
         MainUI.instance.UpdateResourceUI();
+
+        
 
         return true;
     }
