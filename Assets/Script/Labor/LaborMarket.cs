@@ -6,6 +6,7 @@ public class LaborMarket : MonoBehaviour
 {
     [SerializeField] private GameObject workerPrefab;
     [SerializeField] private GameObject workerParent;
+    public GameObject WorkerParent {  get { return workerParent; } }
 
     [SerializeField] private GameObject staffCardPrefab;
     [SerializeField] private GameObject staffCardParent;
@@ -54,6 +55,8 @@ public class LaborMarket : MonoBehaviour
 
             w.StaffName = SetName(w);
             w.DailyWage = Random.Range(80, 120);
+            w.ChangeCharSkin(); //show 3d model
+            w.SetToWalk(Office.instance.SpawnPosition.transform.position);
 
             laborInMarket.Add(staffObj);
 
