@@ -165,6 +165,8 @@ MonoBehaviour:
   staffParent: {fileID: 286603253}
   spawnPosition: {fileID: 1110342656}
   rallyPosition: {fileID: 1277972799}
+  unitLimit: 3
+  housingUnitNum: 6
 --- !u!4 &45643306
 Transform:
   m_ObjectHideFlags: 0
@@ -4578,7 +4580,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1036319607}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 171938980}
+        m_TargetAssemblyTypeName: StructureManager, Assembly-CSharp
+        m_MethodName: BeginNewBuildingPlacement
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 2480001502711600211, guid: f10457b98eca28249b00c24a7a7e8e65, type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1036319607
 MonoBehaviour:
   m_ObjectHideFlags: 0
