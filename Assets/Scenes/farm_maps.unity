@@ -660,6 +660,11 @@ MonoBehaviour:
   gridPlane: {fileID: 2106946125}
   _curStructure: {fileID: 0}
   structurePrefab: []
+  roadGreenTilePrefab: {fileID: 3091946102179427118, guid: ccdb6698e26011f44b0fd69b818439a8, type: 3}
+  roadGreenTileParent: {fileID: 1370512936}
+  startRoadPos: {x: 0, y: 0, z: 0}
+  endRoadPos: {x: 0, y: 0, z: 0}
+  roadGreenTilesList: []
 --- !u!114 &171938981
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -686,6 +691,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 368114340}
+  - {fileID: 1370512937}
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -5898,6 +5904,37 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1331201359}
   m_CullTransparentMesh: 1
+--- !u!1 &1370512936
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1370512937}
+  m_Layer: 0
+  m_Name: RoadtileParent
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1370512937
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1370512936}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 171938982}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1394497244
 GameObject:
   m_ObjectHideFlags: 0
@@ -6915,7 +6952,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1617726976}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 171938980}
+        m_TargetAssemblyTypeName: StructureManager, Assembly-CSharp
+        m_MethodName: BeginNewBuildingPlacement
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 3887591126779314186, guid: 911741f3e078ba94db73e4ea1aaae3f8, type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1617726976
 MonoBehaviour:
   m_ObjectHideFlags: 0

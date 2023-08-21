@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 1366968556857033691}
   - component: {fileID: 8567079006369576322}
   - component: {fileID: 2667416786354313303}
+  - component: {fileID: 9069182638281876468}
   m_Layer: 0
   m_Name: Road
   m_TagString: Road
@@ -51,7 +52,7 @@ MonoBehaviour:
   structureType: 0
   functional: 0
   structureName: Road
-  hp: 100
+  hp: 1
   costToBuild: 20
   id: 0
 --- !u!54 &8567079006369576322
@@ -83,6 +84,20 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 4.5, y: 2, z: 4.5}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &9069182638281876468
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3887591126779314186}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ed712bff6274bb42904f7d402d64469, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  canBuild: 0
+  plane: {fileID: 5229722312797921457}
 --- !u!1 &5229722312797921457
 GameObject:
   m_ObjectHideFlags: 0
