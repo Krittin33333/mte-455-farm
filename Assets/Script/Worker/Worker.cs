@@ -1,9 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor;
 using UnityEngine;
 using UnityEngine.AI;
-using UnityEngine.Analytics;
 
 public enum Gender
 {
@@ -11,20 +9,8 @@ public enum Gender
     female
 }
 
-public enum UnitState
+public class Worker : Unit
 {
-    Idle,
-    Walk,
-    Plow,
-    Sow,
-    Water,
-    Harvest
-}
-
-public class Worker : MonoBehaviour
-{
-
-
     private int id;
     public int ID { get { return id; } set { id = value; } }
 
@@ -48,82 +34,6 @@ public class Worker : MonoBehaviour
     [SerializeField] private bool hired = false;
     public bool Hired { get { return hired; } set { hired = value; } }
 
-    [SerializeField] private UnitState state;
-    public UnitState State { get { return state; } set { state = value; } }
-
-    private NavMeshAgent navAgent;
-    public NavMeshAgent NavAgent { get { return navAgent; } set { navAgent = value; } }
-
-    private float distance;
-
-    [SerializeField] private GameObject targetStructure;
-    public GameObject TargetStructure { get { return targetStructure; } set { targetStructure = value; } }
-
-    //Timer
-    private float CheckStateTimer = 0f;
-    private float CheckStateTimeWait = 0.5f;
-
-    [SerializeField] private GameObject[] tools;
-
-    
-
-    void Awake()
-    {
-        navAgent = GetComponent<NavMeshAgent>();
-    }
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        CheckStaffState();
-    }
-
-    private void CheckStaffState()
-    {
-        CheckStateTimer += Time.deltaTime;
-
-        if (CheckStateTimer >= CheckStateTimeWait)
-        {
-            CheckStateTimer = 0;
-            SwitchStaffState();
-        }
-    }
-
-    private void SwitchStaffState()
-    {
-        switch (state)
-        {
-            case UnitState.Walk:
-                WalkUpdate();
-                break;
-        }
-    }
-
-    private void WalkUpdate()
-    {
-        distance = Vector3.Distance(navAgent.destination, transform.position);
-
-        if (distance <= 3f)
-        {
-            navAgent.isStopped = true;
-            state = UnitState.Idle;
-        }
-    }
-
-    public void SetToWalk(Vector3 dest)
-    {
-        state = UnitState.Walk;
-
-        navAgent.SetDestination(dest);
-        navAgent.isStopped = false;
-    }
-
     public void InitiateCharID(int i)
     {
         charSkinID = i;
@@ -137,6 +47,7 @@ public class Worker : MonoBehaviour
             staffGender = Gender.female;
         }
     }
+
     public void ChangeCharSkin()
     {
         for (int i = 0; i < charSkin.Length; i++)
@@ -167,25 +78,32 @@ public class Worker : MonoBehaviour
             {
                 case FarmStage.plowing:
                     state = UnitState.Plow;
-                    EquipTool(0);
+                    EquipTool(0); //Hoe
                     farm.CheckTimeForWork();
                     break;
                 case FarmStage.sowing:
                     state = UnitState.Sow;
-                    EquipTool(1);
+                    EquipTool(1); //Sack
                     farm.CheckTimeForWork();
                     break;
                 case FarmStage.maintaining:
                     state = UnitState.Water;
-                    EquipTool(2);
+                    EquipTool(2); //Watering Can
                     farm.CheckTimeForWork();
                     break;
                 case FarmStage.harvesting:
                     state = UnitState.Harvest;
-                    DisableAllTools();
                     farm.CheckTimeForWork();
                     break;
             }
+        }
+    }
+
+    public void HideCharSkin()
+    {
+        foreach (GameObject obj in charSkin)
+        {
+            obj.SetActive(false);
         }
     }
 
@@ -194,7 +112,6 @@ public class Worker : MonoBehaviour
         for (int i = 0; i < tools.Length; i++)
             tools[i].SetActive(false);
     }
-
 
     private void EquipTool(int i)
     {
