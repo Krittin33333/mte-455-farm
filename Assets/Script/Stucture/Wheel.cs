@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Wheel : MonoBehaviour
@@ -10,6 +8,6 @@ public class Wheel : MonoBehaviour
     void Update()
     {
         if (wheel != null)
-            wheel.transform.Rotate(0f, 0f, 1f);
+            wheel.transform.Rotate(0f, 0f, 0.1f);
     }
 }
