@@ -30,7 +30,7 @@ Transform:
   m_GameObject: {fileID: 5441756508827085239}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.78, y: 0.91, z: 0.79}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1885091601971906553}
@@ -57,6 +57,7 @@ MonoBehaviour:
   costToBuild: 800
   id: 0
   isHousing: 0
+  isWarehouse: 0
   unitLayerMask:
     serializedVersion: 2
     m_Bits: 0
@@ -89,7 +90,7 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
-  m_Radius: 3
+  m_Radius: 2.49
   m_Height: 10
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
@@ -153,7 +154,7 @@ Transform:
   m_GameObject: {fileID: 7750345068136986376}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0.1, z: 0}
-  m_LocalScale: {x: 0.45, y: 1, z: 0.45}
+  m_LocalScale: {x: 0.57, y: 1, z: 0.57}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4220977858021417535}
