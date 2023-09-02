@@ -97,6 +97,12 @@ public abstract class Unit : MonoBehaviour
             case UnitState.AttackBuilding:
                 AttackBuilding();
                 break;
+            case UnitState.MoveToAttackUnit:
+                MoveToAttackUnit();
+                break;
+            case UnitState.AttackUnit:
+                AttackUnit();
+                break;
         }
     }
 
@@ -216,4 +222,6 @@ public abstract class Unit : MonoBehaviour
             u.TakeDamage(attackPower);
         }
     }
+
+
 }
