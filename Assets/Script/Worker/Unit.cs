@@ -120,13 +120,13 @@ public abstract class Unit : MonoBehaviour
         if (distance <= 3f)
         {
             navAgent.isStopped = true;
-            state = UnitState.Idle;
+            SetUnitState(UnitState.Idle);
         }
     }
 
     public void SetToWalk(Vector3 dest)
     {
-        state = UnitState.Walk;
+        SetUnitState(UnitState.Walk);
 
         navAgent.SetDestination(dest);
         navAgent.isStopped = false;
@@ -136,7 +136,7 @@ public abstract class Unit : MonoBehaviour
     {
         if (targetStructure == null)
         {
-            state = UnitState.Idle;
+            SetUnitState(UnitState.Idle);
             navAgent.isStopped = true;
             return;
         }
@@ -149,7 +149,7 @@ public abstract class Unit : MonoBehaviour
         distance = Vector3.Distance(transform.position, targetStructure.transform.position);
 
         if (distance <= attackRange)
-            state = UnitState.AttackBuilding;
+            SetUnitState(UnitState.AttackBuilding);
     }
 
     protected void AttackBuilding()
@@ -209,7 +209,7 @@ public abstract class Unit : MonoBehaviour
     {
         if (targetUnit == null)
         {
-            state = UnitState.Idle;
+            SetUnitState(UnitState.Idle);
             navAgent.isStopped = true;
             return;
         }
@@ -222,7 +222,7 @@ public abstract class Unit : MonoBehaviour
         distance = Vector3.Distance(transform.position, targetUnit.transform.position);
 
         if (distance <= attackRange)
-            state = UnitState.AttackUnit;
+            SetUnitState(UnitState.AttackUnit);
     }
 
     protected void AttackUnit()
@@ -246,7 +246,7 @@ public abstract class Unit : MonoBehaviour
         if (u.gameObject != null)
         {
             targetUnit = u.gameObject;
-            state = UnitState.MoveToAttackUnit;
+            SetUnitState(UnitState.MoveToAttackUnit);
         }
     }
 
@@ -255,7 +255,7 @@ public abstract class Unit : MonoBehaviour
         if (t.gameObject != null)
         {
             targetUnit = t.gameObject;
-            state = UnitState.MoveToAttackUnit;
+            SetUnitState(UnitState.MoveToAttackUnit);
         }
     }
 
