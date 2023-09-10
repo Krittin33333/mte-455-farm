@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
+
 public enum Gender
 {
     male,
@@ -195,7 +196,7 @@ public class Worker : Unit
         if (Vector3.Distance(transform.position, navAgent.destination) <= 1f)
         {
             LookAt(navAgent.destination);
-            state = UnitState.Mining;
+            SetUnitState(UnitState.Mining);
         }
     }
 

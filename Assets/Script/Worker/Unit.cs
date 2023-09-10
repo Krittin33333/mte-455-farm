@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.Events;
 
 public enum UnitState
 {
@@ -55,6 +56,8 @@ public abstract class Unit : MonoBehaviour
 
     [SerializeField] protected GameObject[] tools;
     [SerializeField] protected GameObject weapon;
+
+    public UnityEvent<UnitState> onStateChange;
 
     [SerializeField] protected GameObject targetUnit;
     public GameObject TargetUnit { get { return targetUnit; } set { targetUnit = value; } }
@@ -256,6 +259,13 @@ public abstract class Unit : MonoBehaviour
         }
     }
 
+    public void SetUnitState(UnitState s)
+    {
+        if (onStateChange != null) //if there is an icon
+            onStateChange.Invoke(s);
+
+        state = s;
+    }
 
 
 }
