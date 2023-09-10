@@ -754,6 +754,8 @@ MonoBehaviour:
   laborMarketPanel: {fileID: 1091873098}
   farmPanel: {fileID: 2019466953}
   farmNameText: {fileID: 874092749}
+  warehousePanel: {fileID: 1244227233}
+  warehouseNameText: {fileID: 1734886533}
 --- !u!114 &284254604
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7667,7 +7669,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 284254603}
         m_TargetAssemblyTypeName: MainUI, Assembly-CSharp
-        m_MethodName: ToggleFarmPanel
+        m_MethodName: ToggleWarehousePanel
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

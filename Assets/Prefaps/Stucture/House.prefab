@@ -155,6 +155,7 @@ MonoBehaviour:
   costToBuild: 1200
   id: 2
   isHousing: 1
+  isWarehouse: 0
 --- !u!114 &2514816977940570501
 MonoBehaviour:
   m_ObjectHideFlags: 0
