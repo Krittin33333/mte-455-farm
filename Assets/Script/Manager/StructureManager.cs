@@ -345,5 +345,12 @@ public class StructureManager : MonoBehaviour
     }
     #endregion
 
-
+    public void CallWorker() //Call Worker in Warehouse Panel
+    {
+        GameObject mine = FindingTarget.CheckForNearestMine(CurStructure.transform.position,
+                                                                        100f,
+                                                                        "Mine");
+        Office.instance.SendWorkerToMine(mine, CurStructure);
+        MainUI.instance.UpdateResourceUI();
+    }
 }
