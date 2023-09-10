@@ -113,10 +113,11 @@ public class Worker : Unit
 
         Mines mine = other.gameObject.GetComponent<Mines>();
 
-        if ((other.tag == "Mine") && (farm != null) && (farm.HP < 100))
+        if ((other.tag == "Mine") && (mine != null) && (mine.HP < 100))
         {
             LookAt(targetMine.transform.position);
-            state = UnitState.Mining; EquipTool(4); //pickaxe
+            state = UnitState.Mining; 
+            EquipTool(3); //pickaxe
         }
     }
 
@@ -132,6 +133,7 @@ public class Worker : Unit
     {
         for (int i = 0; i < tools.Length; i++)
             tools[i].SetActive(false);
+       // Debug.Log(1);
     }
 
     private void EquipTool(int i)
@@ -188,6 +190,7 @@ public class Worker : Unit
 
         DisableAllTools();
         //Equip PickAxe
+        EquipTool(3); //pickaxe
 
         if (Vector3.Distance(transform.position, navAgent.destination) <= 1f)
         {
@@ -213,6 +216,7 @@ public class Worker : Unit
 
         DisableAllTools();
         //Equip PickAxe
+        EquipTool(3); //pickaxe
 
         if (Time.time - timeLastDig > digRate)
         {
