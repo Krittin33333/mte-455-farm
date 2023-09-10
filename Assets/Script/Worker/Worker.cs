@@ -233,7 +233,7 @@ public class Worker : Unit
             }
             else //Move to deliver at HQ
             {
-                state = UnitState.MoveToDeliver;
+                SetUnitState(UnitState.MoveToDeliver);
                 navAgent.SetDestination(targetStructure.transform.position);
                 navAgent.isStopped = false;
             }

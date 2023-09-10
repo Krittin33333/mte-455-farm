@@ -9,6 +9,10 @@ public class UnitStateBubble : MonoBehaviour
 
     public Sprite miningState;
     public Sprite attackState;
+    public Sprite PlowState;
+    public Sprite SowState;
+    public Sprite WaterState;
+    public Sprite HarvestState;
 
     public void OnStateChange(UnitState state)
     {
@@ -25,10 +29,31 @@ public class UnitStateBubble : MonoBehaviour
                 stateBubbleImg.sprite = miningState;
                 break;
             case UnitState.AttackUnit:
+                stateBubbleImg.color = Color.white;
+                stateBubbleImg.sprite = attackState;
+                break;
             case UnitState.AttackBuilding:
                 stateBubbleImg.color = Color.white;
                 stateBubbleImg.sprite = attackState;
                 break;
+            case UnitState.Plow:
+                stateBubbleImg.color = Color.white;
+                stateBubbleImg.sprite = PlowState;
+                break;
+            case UnitState.Sow:
+                stateBubbleImg.color = Color.white;
+                stateBubbleImg.sprite = SowState;
+                break;
+            case UnitState.Water:
+                stateBubbleImg.color = Color.white;
+                stateBubbleImg.sprite = WaterState;
+                break;
+            case UnitState.Harvest:
+                stateBubbleImg.color = Color.white;
+                stateBubbleImg.sprite = HarvestState;
+                break;
+
+            // else
             default:
                 stateBubbleImg.color = Color.white;
                 stateBubbleImg.enabled = false;
