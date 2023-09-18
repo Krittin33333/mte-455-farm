@@ -9,9 +9,11 @@ public class Market : MonoBehaviour
 
     public void SellWheat()
     {
+        
         Office.instance.Money += Office.instance.Wheat * _curPriceWheat;
+        
         Office.instance.Wheat = 0;
-
+        
         MainUI.instance.UpdateResourceUI();
     }
 
@@ -26,6 +28,7 @@ public class Market : MonoBehaviour
     public void SellAll()
     {
         SellWheat();
+        
         SellMelon();
     }
 }

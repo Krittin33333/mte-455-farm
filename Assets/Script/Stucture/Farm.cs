@@ -117,15 +117,17 @@ using UnityEngine;
             case StructureType.wheat:
                 {
                     Office.instance.Wheat += 1000;
+                    Office.instance.Wheat += TechManager.instance.CheckTechBonus(1);
                     break;
                 }
             case StructureType.melon:
                 {
                     Office.instance.Melon += 1200;
+                    Office.instance.Melon += TechManager.instance.CheckTechBonus(1);
                     break;
                 }
         }
-
+        Office.instance.Money += TechManager.instance.CheckTechBonus(2);
         MainUI.instance.UpdateResourceUI();
     }
 
