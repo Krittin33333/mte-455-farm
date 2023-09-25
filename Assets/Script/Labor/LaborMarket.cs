@@ -5,6 +5,8 @@ using UnityEngine;
 public class LaborMarket : MonoBehaviour
 {
     [SerializeField] private GameObject workerPrefab;
+    public GameObject WorkerPrefab { get { return workerPrefab; } }
+
     [SerializeField] private GameObject workerParent;
     public GameObject WorkerParent {  get { return workerParent; } }
 

@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 1364132386940872567}
   - component: {fileID: 8341389535371356594}
   - component: {fileID: 6188271529033310830}
+  - component: {fileID: -2560472809919661224}
   m_Layer: 6
   m_Name: Warehouse
   m_TagString: Warehouse
@@ -132,6 +133,26 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wheel: {fileID: 1385760398733315758}
+--- !u!114 &-2560472809919661224
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 666036506781638005}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d674338f2fc55be46ba4e8f3b2cf6f88, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  structureData:
+    name: 
+    prefabID: 0
+    isHousing: 0
+    isWarehouse: 0
+    hp: 0
+    position: {x: 0, y: 0, z: 0}
+    rotation: {x: 0, y: 0, z: 0, w: 0}
 --- !u!1 &943875825274890353
 GameObject:
   m_ObjectHideFlags: 0

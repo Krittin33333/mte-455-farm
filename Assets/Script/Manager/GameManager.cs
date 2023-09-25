@@ -12,11 +12,24 @@ public class GameManager : MonoBehaviour
     [SerializeField] private float dayTimer = 0f;
     [SerializeField] private float secondsPerDay = 5f;
 
-     void Awake()
+    [SerializeField] private GameObject[] structurePrefab;
+
+    void Awake()
     {
         instance = this;
     }
-     void Update()
+
+    void Start()
+    {
+        if (Settings.loadingGame == true)
+        {
+            Debug.Log("Loading Mode");
+            SpawnAllUnits();
+            SpawnAllStructures();
+        }
+    }
+
+    void Update()
     {
         CheckTimeForDay();
     }
@@ -33,4 +46,37 @@ public class GameManager : MonoBehaviour
             MainUI.instance.UpdateTechBtns();
         }
     }
+
+
+    private void SpawnAllUnits()
+    {
+        List<UnitData> tempUnits = new List<UnitData>(SaveManager.instance.saveWorkers);
+        SaveManager.instance.saveWorkers.Clear();
+
+        foreach (UnitData data in tempUnits)
+        {
+            GameObject workerObj = Instantiate(LaborMarket.instance.WorkerPrefab, data.position, data.rotation);
+            Worker w = workerObj.GetComponent<Worker>();
+            w.HP = data.hp;
+            w.State = data.state;
+        }
+    }
+
+
+    private void SpawnAllStructures()
+    {
+        List<StructureData> tempStructures = new List<StructureData>(SaveManager.instance.saveStructures);
+        SaveManager.instance.saveStructures.Clear();
+
+        foreach (StructureData data in tempStructures)
+        {
+            GameObject structureObj = Instantiate(structurePrefab[data.prefabID], data.position, data.rotation);
+            Structure s = structureObj.GetComponent<Structure>();
+            s.HP = data.hp;
+            s.IsHousing = data.isHousing;
+            s.IsWarehouse = data.isWarehouse;
+        }
+    }
+
+
 }

@@ -37,6 +37,10 @@ public class MainUI : MonoBehaviour
     [SerializeField]
     private Button[] techBtns;
     [SerializeField] private TMP_Text[] techTexts;
+
+    [SerializeField] public GameObject savePanel;
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -104,6 +108,7 @@ public class MainUI : MonoBehaviour
         }
     }
 
+
     private void SetTechBtnIcons()
     {
         for (int i = 0; i < techBtns.Length; i++)
@@ -139,6 +144,13 @@ public class MainUI : MonoBehaviour
         }
     }
 
+    public void ToggleSavePanel()
+    {
+        if (!savePanel.activeInHierarchy)
+            savePanel.SetActive(true);
+        else
+            savePanel.SetActive(false);
+    }
 
 
 }

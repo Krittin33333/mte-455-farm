@@ -369,6 +369,7 @@ GameObject:
   - component: {fileID: 7811616092575314784}
   - component: {fileID: 3418464562686786865}
   - component: {fileID: 5001074230880555056}
+  - component: {fileID: -8389958375575390072}
   m_Layer: 0
   m_Name: MelonFarm
   m_TagString: Farm
@@ -465,6 +466,26 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
+--- !u!114 &-8389958375575390072
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7839294187896412382}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d674338f2fc55be46ba4e8f3b2cf6f88, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  structureData:
+    name: 
+    prefabID: 0
+    isHousing: 0
+    isWarehouse: 0
+    hp: 0
+    position: {x: 0, y: 0, z: 0}
+    rotation: {x: 0, y: 0, z: 0, w: 0}
 --- !u!1 &8380582820725719169
 GameObject:
   m_ObjectHideFlags: 0
