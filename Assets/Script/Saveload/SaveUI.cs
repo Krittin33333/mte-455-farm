@@ -29,7 +29,7 @@ public class SaveUI : MonoBehaviour
 
     private void Awake()
     {
-       // ShowSavedGameList();
+        ShowSavedGameList();
     }
 
     public void SelectButton(int i) //Slot Button for Load or Save
