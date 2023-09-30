@@ -62,6 +62,7 @@ public class MainUI : MonoBehaviour
         cornText.text = Office.instance.Corn.ToString();
         StoneText.text = Office.instance.Stone.ToString();
         WoodText.text = Office.instance.Wood.ToString();
+        Debug.Log(0);
     }
 
     public void ToggleLaborPanel()
