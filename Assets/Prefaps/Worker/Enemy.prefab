@@ -74,7 +74,7 @@ MonoBehaviour:
   hp: 100
   state: 0
   targetStructure: {fileID: 0}
-  detectRange: 500
+  detectRange: 300
   attackRange: 2
   attackPower: 5
   CheckStateTimer: 0

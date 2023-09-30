@@ -47,7 +47,7 @@ using UnityEngine;
             {
                 stage = FarmStage.sowing;
                 hp = 1;
-                HarvestResult(); // AAAAAAAAAAAAAA
+                
         }
         }
 
@@ -58,7 +58,7 @@ using UnityEngine;
                 functional = true; //Plant will auto grow
                 stage = FarmStage.maintaining;
                 hp = 1;
-            HarvestResult(); // AAAAAAAAAAAAAA
+           
         }
         }
 
@@ -75,7 +75,7 @@ using UnityEngine;
                     stage = FarmStage.harvesting;
                     hp = 1;
                 }
-            HarvestResult(); // AAAAAAAAAAAAAA
+            
         }
         }
 
