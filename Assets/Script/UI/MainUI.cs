@@ -40,6 +40,8 @@ public class MainUI : MonoBehaviour
 
     [SerializeField] public GameObject savePanel;
 
+    [SerializeField] public GameObject settingPanel;
+
 
     // Start is called before the first frame update
     void Start()
@@ -96,6 +98,14 @@ public class MainUI : MonoBehaviour
             techPanel.SetActive(true);
         else
             techPanel.SetActive(false);
+    }
+
+    public void ToggleSettingPanel()
+    {
+        if (!settingPanel.activeInHierarchy)
+            settingPanel.SetActive(true);
+        else
+            settingPanel.SetActive(false);
     }
 
     public void ClickResearchTech(int i)

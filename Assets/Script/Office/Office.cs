@@ -79,6 +79,7 @@ public class Office : MonoBehaviour
 
         Worker w = workerObj.GetComponent<Worker>();
 
+        workerObj.SetActive(true);
         w.Hired = true; //Hire this worker
         w.SetToWalk(rallyPosition.transform.position);
 
@@ -145,6 +146,7 @@ public class Office : MonoBehaviour
     {
         workers.Remove(w);
         dailyCostWages -= w.DailyWage;
+        
     }
     public bool ToFireStaff(GameObject staffObj)
     {
@@ -161,18 +163,20 @@ public class Office : MonoBehaviour
             if (f != null)
                 f.CurrentWorkers.Remove(w); //Remove from this farm
         }
-
+        
         w.TargetStructure = null; //Quit working
         w.DisableAllTools(); //disabletools
         w.SetToWalk(spawnPosition.transform.position);
 
+        staffObj.SetActive(false);
+
         FireStaff(w);
         MainUI.instance.UpdateResourceUI();
 
-        
-
         return true;
     }
+
+   
 
     public void CheckHousing()
     {
