@@ -56,7 +56,7 @@ MonoBehaviour:
   structureName: Road
   hp: 1
   costToBuild: 20
-  id: 0
+  id: 4
   isHousing: 0
   isWarehouse: 0
 --- !u!54 &8567079006369576322

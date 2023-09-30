@@ -192,6 +192,9 @@ public class StructureManager : MonoBehaviour
                 case "Warehouse": // if we click Object with WareHouse tag 
                     OpenWarehousePanel();
                     break;
+                case "Building": // if we click Object with WareHouse tag 
+                    MainUI.instance.ToggleLaborPanel();
+                    break;
 
             }
         }

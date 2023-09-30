@@ -56,7 +56,7 @@ public class MainUI : MonoBehaviour
     public void UpdateResourceUI()
     {
         moneyText.text = Office.instance.Money.ToString();
-        staffText.text = Office.instance.Workers.Count.ToString();
+        staffText.text = (Office.instance.Workers.Count.ToString() + " / " + Office.instance.UnitLimit.ToString());
         wheatText.text = Office.instance.Wheat.ToString();
         melonText.text = Office.instance.Melon.ToString();
         cornText.text = Office.instance.Corn.ToString();

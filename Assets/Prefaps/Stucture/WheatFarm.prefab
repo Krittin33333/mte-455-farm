@@ -253,7 +253,7 @@ MonoBehaviour:
   structureName: WheatFarm
   hp: 1
   costToBuild: 1800
-  id: 1
+  id: 7
   isHousing: 0
   isWarehouse: 0
   stage: 0

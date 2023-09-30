@@ -56,7 +56,7 @@ MonoBehaviour:
   structureName: Turret
   hp: 200
   costToBuild: 800
-  id: 0
+  id: 5
   isHousing: 0
   isWarehouse: 0
   unitLayerMask:

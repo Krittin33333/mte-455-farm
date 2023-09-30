@@ -413,7 +413,7 @@ MonoBehaviour:
   structureName: MelonFarm
   hp: 1
   costToBuild: 3200
-  id: 1
+  id: 3
   isHousing: 0
   isWarehouse: 0
   stage: 3

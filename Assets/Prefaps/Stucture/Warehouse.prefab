@@ -58,7 +58,7 @@ MonoBehaviour:
   structureName: Warehouse
   hp: 100
   costToBuild: 900
-  id: 4
+  id: 6
   isHousing: 0
   isWarehouse: 1
 --- !u!114 &1762947202274358949

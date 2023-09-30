@@ -155,7 +155,7 @@ MonoBehaviour:
   structureName: Worker's House
   hp: 100
   costToBuild: 1200
-  id: 2
+  id: 1
   isHousing: 1
   isWarehouse: 0
 --- !u!114 &2514816977940570501

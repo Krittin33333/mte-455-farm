@@ -74,14 +74,21 @@ MonoBehaviour:
   hp: 100
   state: 0
   targetStructure: {fileID: 0}
-  detectRange: 50
+  detectRange: 500
   attackRange: 2
   attackPower: 5
   CheckStateTimer: 0
   CheckStateTimeWait: 0.5
   tools: []
   weapon: {fileID: 1309244834713454, guid: c8ce03658faa05740848f7c3bf0d0520, type: 3}
+  onStateChange:
+    m_PersistentCalls:
+      m_Calls: []
+  targetUnit: {fileID: 0}
   buildingLayerMask:
+    serializedVersion: 2
+    m_Bits: 0
+  unitLayerMask:
     serializedVersion: 2
     m_Bits: 0
   checkForEnemyRate: 1
