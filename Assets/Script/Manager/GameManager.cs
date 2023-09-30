@@ -6,7 +6,7 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
 
-    [SerializeField] private int day = 0;
+    [SerializeField] private int day = 1;
     public int Day { get { return day; } set { day = value; } }
 
     [SerializeField] private float dayTimer = 0f;

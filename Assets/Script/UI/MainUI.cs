@@ -89,7 +89,7 @@ public class MainUI : MonoBehaviour
     }
     public void UpdateDayText()
     {
-        dayText.text = GameManager.instance.Day.ToString();
+        dayText.text = ("Day ")+GameManager.instance.Day.ToString();
     }
 
     public void ToggleTechPanel()
