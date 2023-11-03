@@ -84,14 +84,19 @@ public class LaborMarket : MonoBehaviour
 
     private GameObject InitializeLaborCard(Worker w)
     {
+        
+        
         GameObject staffCardObj = Instantiate(staffCardPrefab, staffCardParent.transform);
 
         StaffCard card = staffCardObj.GetComponent<StaffCard>();
         card.UpdateID(w.ID);
+        Debug.Log(w.CharFaceID + "= w.CharFaceID");
         card.UpdateProfilePic(w.charFacePic[w.CharFaceID]);
+        
         card.UpdateProfileName(w.StaffName);
         card.UpdateWage(w.DailyWage);
 
         return staffCardObj;
     }
 }
+
